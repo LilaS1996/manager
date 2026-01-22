@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 智能待辦清單</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1><i class="fas fa-tasks"></i> 智能待辦清單</h1>
+            <div class="stats">
+                <span>總計: <span id="total-count">0</span></span>
+                <span>完成: <span id="done-count">0</span></span>
+            </div>
+        </header>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="pending">待辦</button>
+            <button class="filter-btn" data-filter="done">已完成</button>
+            <button class="filter-btn" data-filter="today">今天</button>
+        </div>
+
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input type="text" id="todo-input" placeholder="輸入待辦事項，按Enter新增...">
+                <select id="priority-select">
+                    <option value="low">低優先</option>
+                    <option value="medium" selected>中優先</option>
+                    <option value="high">高優先</option>
+                </select>
+                <button id="add-btn"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="todos-container" id="todos-container">
+            <div class="empty-state">
+                <i class="fas fa-clipboard-list"></i>
+                <p>沒有待辦事項<br>開始新增你的第一個任務吧！</p>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="clear-done" class="clear-btn"><i class="fas fa-trash"></i> 清除已完成</button>
+            <button id="export-btn"><i class="fas fa-download"></i> 匯出JSON</button>
+            <button id="import-btn"><i class="fas fa-upload"></i> 匯入JSON</button>
+        </div>
+    </div>
+
+    <input type="file" id="import-file" accept=".json" style="display: none;">
+    <script src="todo.js"></script>
+</body>
+</html>
